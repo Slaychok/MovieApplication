@@ -39,7 +39,7 @@ fun CustomTextField(
     val isFocused by interactionSource.collectIsFocusedAsState()
     val animatedBorderColor by animateColorAsState(
         targetValue = if (isFocused) focusedBorderColor else borderColor,
-        animationSpec = tween(durationMillis = 300),
+        animationSpec = tween(durationMillis = 330),
         label = "Border Color Animation"
     )
 

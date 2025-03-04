@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MovieApplication</string>
+    <string name="login_now">Login Now</string>
+    <string name="login_text">Welcome back to PlayZone! Enter your email address and your password to enjoy the latest features of PlayZone</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="have_not_account">Don\'t have account?</string>
+    <string name="create_one">Create one</string>
+    <string name="create_account">Create an Account</string>
+    <string name="username">Username</string>
 </resources>

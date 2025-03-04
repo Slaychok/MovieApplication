@@ -16,7 +16,7 @@ fun CustomText(
     fontSize: TextUnit,
     color: Color = BlackForBackground,
     fontWeight: FontWeight,
-    textDecoration: TextDecoration? = null
+    textDecoration: TextDecoration? = null,
 ) {
     Text(
         text = text,
@@ -28,6 +28,6 @@ fun CustomText(
             fontWeight = fontWeight,
             color = color,
             textDecoration = textDecoration
-        )
+        ),
     )
 }
