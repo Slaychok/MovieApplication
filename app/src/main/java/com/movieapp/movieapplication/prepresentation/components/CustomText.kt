@@ -5,15 +5,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.TextUnit
+import com.movieapp.movieapplication.prepresentation.ui.theme.BlackForBackground
+import com.movieapp.movieapplication.prepresentation.ui.theme.SkModernist
 
 @Composable
 fun CustomText(
     text: String,
-    fontSize: TextUnit, // Позволяет задавать размер текста
-    color: Color = Black1, // Цвет текста (по умолчанию черный)
-    fontWeight: FontWeight // Жирность текста
+    fontSize: TextUnit,
+    color: Color = BlackForBackground,
+    fontWeight: FontWeight,
+    textDecoration: TextDecoration? = null
 ) {
     Text(
         text = text,
@@ -23,14 +26,8 @@ fun CustomText(
             fontFamily = SkModernist,
             fontSize = fontSize,
             fontWeight = fontWeight,
-            color = color
+            color = color,
+            textDecoration = textDecoration
         )
     )
-}
-
-
-@Preview
-@Composable
-fun CustomTextPreview(){
-
 }

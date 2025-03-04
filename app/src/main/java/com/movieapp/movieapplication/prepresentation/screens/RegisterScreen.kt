@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -23,10 +24,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.movieapp.movieapplication.prepresentation.components.CustomButton
+import com.movieapp.movieapplication.prepresentation.components.CustomText
+import com.movieapp.movieapplication.prepresentation.components.CustomTextField
+import com.movieapp.movieapplication.prepresentation.components.PasswordTextField
+import com.movieapp.movieapplication.prepresentation.ui.theme.BlackForBackground
+import com.movieapp.movieapplication.prepresentation.ui.theme.GreyForFont
 
 @Composable
 fun RegisterScreen(navController: NavController) {
-    // Создаем состояния для email и password
     val userNameState = remember { mutableStateOf("") }
     val emailState = remember { mutableStateOf("") }
     val passwordState = remember { mutableStateOf("") }
@@ -34,12 +39,12 @@ fun RegisterScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Black1)
+            .background(BlackForBackground)
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(
+        CustomText(
             text = "Create an Account",
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
@@ -48,64 +53,37 @@ fun RegisterScreen(navController: NavController) {
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        TextField(
-            value = userNameState.value,
-            onValueChange = { userNameState.value = it },
-            label = { Text(text = "User name", color = GreyFont) },
-            modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(15.dp),
-            colors = TextFieldDefaults.colors(
-                focusedContainerColor = Color.DarkGray,
-                unfocusedContainerColor = Color.DarkGray,
-                disabledContainerColor = Color.DarkGray,
-                focusedIndicatorColor = Color.Transparent,
-                cursorColor = GreyFont,
-                unfocusedIndicatorColor = Color.Transparent
-            )
+        CustomTextField(
+            text = userNameState.value,
+            onTextChange = { userNameState.value = it },
+            placeholder = { CustomText(text = "Username", fontSize = 16.sp, fontWeight = FontWeight.Normal, color = GreyForFont) },
+            modifier = Modifier.fillMaxWidth()
         )
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        TextField(
-            value = emailState.value,
-            onValueChange = { emailState.value = it },
-            label = { Text(text = "Email Address", color = GreyFont) },
-            modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(15.dp),
-            colors = TextFieldDefaults.colors(
-                focusedContainerColor = Color.DarkGray,
-                unfocusedContainerColor = Color.DarkGray,
-                disabledContainerColor = Color.DarkGray,
-                focusedIndicatorColor = Color.Transparent,
-                cursorColor = GreyFont,
-                unfocusedIndicatorColor = Color.Transparent
-            )
+        CustomTextField(
+            text = emailState.value,
+            onTextChange = { emailState.value = it },
+            placeholder = { CustomText(text = "Email Address", fontSize = 16.sp, fontWeight = FontWeight.Normal, color = GreyForFont) },
+            modifier = Modifier.fillMaxWidth()
         )
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        TextField(
-            value = passwordState.value,
-            onValueChange = { passwordState.value = it },
-            label = { Text(text = "Password", color = GreyFont) },
-            modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(15.dp),
-            colors = TextFieldDefaults.colors(
-                focusedContainerColor = Color.DarkGray,
-                unfocusedContainerColor = Color.DarkGray,
-                disabledContainerColor = Color.DarkGray,
-                focusedIndicatorColor = Color.Transparent,
-                cursorColor = GreyFont,
-                unfocusedIndicatorColor = Color.Transparent
-            )
+        PasswordTextField(
+            text = passwordState.value,
+            onTextChange = { passwordState.value = it },
+            modifier = Modifier.fillMaxWidth()
         )
 
         Spacer(modifier = Modifier.height(20.dp))
 
         CustomButton(
+            modifier = Modifier.fillMaxWidth().height(56.dp),
             text = "Create an Account",
-            onClick = {navController.navigate("login")},
-            modifier = Modifier.fillMaxWidth())
+            onClick = {navController.navigate("main")}
+        )
 
         Spacer(Modifier.height(10.dp))
 
@@ -116,7 +94,6 @@ fun RegisterScreen(navController: NavController) {
 @Preview(showBackground = true)
 @Composable
 fun PreviewRegisterScreen(){
-    // Создаем состояния для email и password
     val userNameState = remember { mutableStateOf("") }
     val emailState = remember { mutableStateOf("") }
     val passwordState = remember { mutableStateOf("") }
@@ -124,12 +101,12 @@ fun PreviewRegisterScreen(){
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Black1)
+            .background(BlackForBackground)
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(
+        CustomText(
             text = "Create an Account",
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
@@ -141,7 +118,7 @@ fun PreviewRegisterScreen(){
         TextField(
             value = userNameState.value,
             onValueChange = { userNameState.value = it },
-            label = { Text(text = "User name", color = GreyFont) },
+            label = { Text(text = "User name", color = GreyForFont) },
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(15.dp),
             colors = TextFieldDefaults.colors(
@@ -149,7 +126,7 @@ fun PreviewRegisterScreen(){
                 unfocusedContainerColor = Color.DarkGray,
                 disabledContainerColor = Color.DarkGray,
                 focusedIndicatorColor = Color.Transparent,
-                cursorColor = GreyFont,
+                cursorColor = GreyForFont,
                 unfocusedIndicatorColor = Color.Transparent
             )
         )
@@ -159,7 +136,7 @@ fun PreviewRegisterScreen(){
         TextField(
             value = emailState.value,
             onValueChange = { emailState.value = it },
-            label = { Text(text = "Email Address", color = GreyFont) },
+            label = { Text(text = "Email Address", color = GreyForFont) },
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(15.dp),
             colors = TextFieldDefaults.colors(
@@ -167,7 +144,7 @@ fun PreviewRegisterScreen(){
                 unfocusedContainerColor = Color.DarkGray,
                 disabledContainerColor = Color.DarkGray,
                 focusedIndicatorColor = Color.Transparent,
-                cursorColor = GreyFont,
+                cursorColor = GreyForFont,
                 unfocusedIndicatorColor = Color.Transparent
             )
         )
@@ -177,7 +154,7 @@ fun PreviewRegisterScreen(){
         TextField(
             value = passwordState.value,
             onValueChange = { passwordState.value = it },
-            label = { Text(text = "Password", color = GreyFont) },
+            label = { Text(text = "Password", color = GreyForFont) },
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(15.dp),
             colors = TextFieldDefaults.colors(
@@ -185,14 +162,14 @@ fun PreviewRegisterScreen(){
                 unfocusedContainerColor = Color.DarkGray,
                 disabledContainerColor = Color.DarkGray,
                 focusedIndicatorColor = Color.Transparent,
-                cursorColor = GreyFont,
+                cursorColor = GreyForFont,
                 unfocusedIndicatorColor = Color.Transparent
             )
         )
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        CustomButton(text = "Create an Account", onClick = {}, modifier = Modifier.fillMaxWidth())
+        CustomButton(text = "Create an Account", onClick = {}, modifier = Modifier.fillMaxWidth().height(56.dp))
 
         Spacer(Modifier.height(10.dp))
 
