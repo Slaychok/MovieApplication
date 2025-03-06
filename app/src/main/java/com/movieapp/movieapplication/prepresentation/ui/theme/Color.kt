@@ -13,7 +13,8 @@ val Pink40 = Color(0xFF7D5260)
 val MyYellow = Color(0xFFF4D144)
 val BlackForBackground = Color(0xFF050B18)
 
-val GreyForFont = Color(0xFF696C75)
-val GreyForContainer = Color(0xFF1F2430)
+val GrayForFont = Color(0xFF696C75)
+val GrayForContainer = Color(0xFF1F2430)
+val GrayForIcons = Color(0xFF45454D)
 
 val White50 = Color(0x77FFFFFF)

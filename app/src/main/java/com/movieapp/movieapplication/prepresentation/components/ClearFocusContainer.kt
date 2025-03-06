@@ -14,12 +14,13 @@ fun ClearFocusContainer(
     content: @Composable () -> Unit
 ) {
     val focusManager = LocalFocusManager.current
+    val interactionSource = remember { MutableInteractionSource() }
 
     Box(
         modifier = modifier
             .clickable(
                 indication = null, // Отключаем ripple эффект
-                interactionSource = remember { MutableInteractionSource() } // Отключаем ripple-эффекты
+                interactionSource = interactionSource // Отключаем ripple-эффекты
             ) {
                 focusManager.clearFocus()
             }

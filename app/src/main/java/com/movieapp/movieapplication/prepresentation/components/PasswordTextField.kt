@@ -11,8 +11,9 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import com.movieapp.movieapplication.R
-import com.movieapp.movieapplication.prepresentation.ui.theme.GreyForFont
+import com.movieapp.movieapplication.prepresentation.ui.theme.GrayForFont
 import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
@@ -30,7 +31,11 @@ fun PasswordTextField(
         onTextChange = onTextChange,
         visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
         placeholder = {
-            CustomText(text = "Password", fontSize = 16.sp, fontWeight = FontWeight.Normal, color = GreyForFont)
+            CustomText(
+                text = stringResource(R.string.password),
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Normal,
+                color = GrayForFont)
         },
         modifier = modifier,
         trailingIcon = {

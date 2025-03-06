@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.text.input.VisualTransformation
-import com.movieapp.movieapplication.prepresentation.ui.theme.GreyForFont
+import com.movieapp.movieapplication.prepresentation.ui.theme.GrayForFont
 import com.movieapp.movieapplication.prepresentation.ui.theme.MyYellow
 import androidx.compose.ui.graphics.SolidColor
 
@@ -32,7 +32,7 @@ fun CustomTextField(
     textColor: Color = Color.White,
     borderColor: Color = Color.Transparent,
     focusedBorderColor: Color = MyYellow,
-    cursorColor: Color = GreyForFont,
+    cursorColor: Color = GrayForFont,
     visualTransformation: VisualTransformation = VisualTransformation.None
 ) {
     val interactionSource = remember { MutableInteractionSource() }

@@ -26,7 +26,7 @@ import com.movieapp.movieapplication.prepresentation.components.CustomText
 import com.movieapp.movieapplication.prepresentation.components.CustomTextField
 import com.movieapp.movieapplication.prepresentation.components.PasswordTextField
 import com.movieapp.movieapplication.prepresentation.ui.theme.BlackForBackground
-import com.movieapp.movieapplication.prepresentation.ui.theme.GreyForFont
+import com.movieapp.movieapplication.prepresentation.ui.theme.GrayForFont
 
 @Composable
 fun RegisterScreen(navController: NavController) {
@@ -62,7 +62,7 @@ fun RegisterScreen(navController: NavController) {
                     text = stringResource(R.string.username),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Normal,
-                    color = GreyForFont) },
+                    color = GrayForFont) },
                 modifier = Modifier.fillMaxWidth()
             )
 
@@ -75,7 +75,7 @@ fun RegisterScreen(navController: NavController) {
                     text = stringResource(R.string.email_address),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Normal,
-                    color = GreyForFont) },
+                    color = GrayForFont) },
                 modifier = Modifier.fillMaxWidth()
             )
 

@@ -33,7 +33,7 @@ import com.movieapp.movieapplication.prepresentation.components.CustomText
 import com.movieapp.movieapplication.prepresentation.components.CustomTextField
 import com.movieapp.movieapplication.prepresentation.components.PasswordTextField
 import com.movieapp.movieapplication.prepresentation.ui.theme.BlackForBackground
-import com.movieapp.movieapplication.prepresentation.ui.theme.GreyForFont
+import com.movieapp.movieapplication.prepresentation.ui.theme.GrayForFont
 import com.movieapp.movieapplication.prepresentation.ui.theme.MyYellow
 import com.movieapp.movieapplication.prepresentation.ui.theme.White50
 
@@ -81,7 +81,7 @@ fun LoginScreen(navController: NavController) {
                 placeholder =  { CustomText(
                     text = stringResource(R.string.email_address),
                     fontSize = 16.sp, fontWeight = FontWeight.Normal,
-                    color = GreyForFont) },
+                    color = GrayForFont) },
                 modifier = Modifier.fillMaxWidth()
             )
 
@@ -110,7 +110,7 @@ fun LoginScreen(navController: NavController) {
                 CustomText(
                     text = stringResource(R.string.have_not_account),
                     fontSize = 16.sp,
-                    color = GreyForFont,
+                    color = GrayForFont,
                     fontWeight = FontWeight.Normal)
 
                 TextButton(
